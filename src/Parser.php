@@ -552,6 +552,7 @@ class Parser
                 $this -> query -> join($joinTable, $firstKey ,'=', $secondKey);
                 //modify the $column name and continue parsing.
                 $column = $joinTable.'.'.$relationColumn;
+                $this -> query -> addSelect($model -> getTable().'.*');
 
             }
             //should we be using an eloquent builder, append the table name to every column to differentiate from joined columns.
