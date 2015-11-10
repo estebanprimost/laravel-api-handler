@@ -15,6 +15,10 @@ class ApiHandler
      */
     public function parseSingle($queryBuilder, $identification, $queryParams = false)
     {
+        if ($identification === 'rules'){
+            return new $queryBuilder;
+        }
+        
         if ($queryParams === false) {
             $queryParams = Input::get();
         }
